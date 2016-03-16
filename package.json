@@ -1,0 +1,43 @@
+{
+  "name": "reveal.js",
+  "version": "2.4.0",
+  "description": "ES2015 / ES6 Presentation",
+  "homepage": "http://www.libertyleap.net/",
+  "scripts": {
+    "test": "grunt jshint",
+    "start": ""
+  },
+  "author": {
+    "name": "Srini Kusunam",
+    "email": "skusunam@libertyleap.net"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/skusunam"
+  },
+  "engines": {
+    "node": "~0.8.0"
+  },
+  "dependencies": {
+    "underscore": "~1.3.3",
+    "express": "~2.5.9",
+    "mustache": "~0.4.0",
+    "socket.io": "~0.9.13"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.2.0",
+    "grunt-contrib-cssmin": "~0.4.1",
+    "grunt-contrib-uglify": "~0.1.1",
+    "grunt-contrib-watch": "~0.2.0",
+    "grunt-contrib-sass": "~0.2.2",
+    "grunt-contrib-connect": "~0.2.0",
+    "grunt-zip": "~0.7.0",
+    "grunt": "~0.4.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/hakimel/reveal.js/blob/master/LICENSE"
+    }
+  ]
+}

@@ -1,0 +1,1372 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>JavaScript Next - ES-2015 / ES-6</title>
+
+        <meta name="description" content="The new feaures of JavaScript, that are a part of ES6 standard">
+        <meta name="author" content="Srini Kusunam">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/default.css" id="theme">
+        <link rel="stylesheet" href = "css/bootstrap.css">
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+
+                <section>
+                    <h1>JavaScript Next</h1>
+                    <h3>ES-2015 / ES-6</h3>
+                    <p>
+                        <a href="http://github.com/skusunam">Srini Kusunam</a> / <a href="http://twitter.com/skusunam">@skusunam</a>
+                    </p>
+                </section>
+
+                <section>
+                  <section>
+                      <h2>This is me</h2>
+                      <img class="image" src="images/me-small.jpeg" alt="me">
+                      <p>
+                          I am <a href="#">@skusunam</a> on <a href="https://twitter.com/skusunam">Twitter</a>, <a href="https://github.com/skusunam">Github</a>.
+                      </p>
+                  </section>
+                  <section>
+                      <h2>About me!</h2>
+                      <ul>
+                        <li>I have been writing code for almost 18 years</li>
+                        <li>Came from Java/J2EE/Spring background</li>
+                        <li>Last 5yrs just writing Javascript and Coffeescript using JQuery, Backbone and Angular</li>
+                        <li>New to Dallas area (6 months)</li>
+                        <li>I use to co-organize <a href="http://github.com/skusunam">@ngChicago</a> until SEPT-2015 for almost 3yrs with 1850 user community</li>
+                        <li>Also started <a href="http://github.com/skusunam">@ngHyderabad</a> meetup in Hyderabad, India with 2150 user community</li>
+                        <li>Built mother of all Angular App's @ADP and part of closed Angular group to give first hand feedback about issues / improvements in core framework</li>
+                        <li>Currently working as Front-end Architect <a href="http://moneygram.com/">@Moneygram</a></li>
+                      </ul>
+                  </section>
+                  <section>
+                      <h2>Here is the breakfast with Angular team @ngConf-2015</h2>
+                      <img class="image" src="images/angular-team.jpg" alt="me">
+                  </section>
+                </section>
+
+                <section>
+                    <h2>JavaScript?</h2>
+                    <p>
+                        Language is evolving. Fast!<br><br>
+                        <span class="fragment">Annotations, </span>
+                        <span class="fragment">Classes, </span>
+                        <span class="fragment">Blah blah...</span>
+                    </p>
+                </section>
+
+                <section>
+                  <section>
+                    <h2>Javascript History</h2>
+                      <ul>
+                      <li class="fragment">April 1995 - Brendan Eich joins Netscape</li>
+                      <li class="fragment">Hired him to the server team, not the client team</li>
+                      <li class="fragment">Sun puts pressure on Netscape to add Java to the browser</li>
+                      <li class="fragment">May-1995 - Brendan moved to Front-end team</li>
+                      <li class="fragment">Brendan did not wanted Java because it is TOO COMPLEX.....</li>
+                          <ul class="fragment">
+                            <li>Constantly running "javac"</li>
+                            <li>Always get a main method on a class</li>
+                            <li>Not for casual, amateur programmer</li>
+                            <li>Need something more like VB</li>
+                            <li>Meant for people who are learning programming for the first time</li>
+                            <li>This is where automatic semi-colons come from</li>
+                          </ul>
+                    </ul>
+                  </section>
+                  <section>
+                    <h2>10 days</h2>
+                    <ul>
+                      <li class="fragment">Brendan starts a new project to build a language for the browser</li>
+                      <li class="fragment">Does anyone know the code name for the project?</li>
+                      <li class="fragment"><h2>MOCHA</h2></li>
+                      <li class="fragment">After Beta the name changed to something else??</li>
+                      <li class="fragment"><h2>LiveScript</h2></li>
+                      <li class="fragment">December-1995 Sun signs agreement allowing the use of name "java" and then "javascript" name</li>
+                    </ul>
+                  </section>
+                  <section>
+                    <ul>
+                      <li class="fragment">Microsoft started complaning about API changes with Netscape</li>
+                      <li class="fragment">June-1997 language specification moved to a committee "ECMA"</li>
+                      <li class="fragment">ECMA - European Computer Manufacturer Assoc</li>
+                      <li class="fragment">Eich commented that "ECMAScript was always an unwanted trade name that sounds like a skin disease" :)</li>
+                      <li class="fragment">Ecma put a committee incharge of driving this spec ???</li>
+                      <li class="fragment"><h2>TC39</h2></li>
+                    </ul>
+                  </section>
+                  <section>
+                      <h2>Javascript History</h2>
+                      <table class="wikitable">
+                        <tbody><tr style="background:#ccf;">
+                          <th>Edition</th>
+                          <th><p>Date published<p></th>
+                          <th><p>Changes from prior edition</p></th>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>June 1997</td>
+                          <td>First edition</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>June 1998</td>
+                          <td>Editorial changes to keep the specification fully aligned with ISO/IEC 16262 international standard</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td><p>December 1999</p></td>
+                          <td><p>Added <span class="highlight">regular expressions, better string handling, new control statements, try/catch exception handling, tighter definition of errors, formatting for numeric output</span> and other enhancements.</p></td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>Abandoned</td>
+                          <td><p>Fourth Edition was <span class="highlight">ABANDONED</span>, due to political differences concerning language complexity. Many features proposed for the Fourth Edition have been completely dropped; some are proposed for ECMAScript Harmony.</p></td>
+                        </tr>
+                        <tr>
+                          <td>5</td>
+                          <td><p>December 2009</p></td>
+                          <td><p>Adds <span class="highlight">"strict mode"</span>, a subset intended to provide more thorough error checking and avoid error-prone constructs. Clarifies many ambiguities in the 3rd edition specification, and accommodates behaviour of real-world implementations that differed consistently from that specification. Adds some new features, such as getters and setters, library support for JSON, and more complete reflection on object properties.</p></td>
+                        </tr>
+                        <tr>
+                          <td>5.1</td>
+                          <td>June 2011</td>
+                          <td>This edition 5.1 of the ECMAScript Standard is fully aligned with third edition of the international standard ISO/IEC 16262:2011.</td>
+                        </tr>
+                        <tr>
+                          <td>6</td>
+                          <td>June 2015</td>
+                          <td><p>The Sixth Edition, known as ECMAScript 2015, adds significant new syntax for writing complex applications, including <span class="highlight">classes</span> and <span class="highlight">modules</span>, but defines them semantically in the same terms as ECMAScript 5 strict mode. Other new features include iterators and <tt>for</tt>/<tt>of</tt> loops, Python-style <span class="highlight">generators</span> and generator expressions, <span class="highlight">arrow functions</span>, binary data, typed arrays, <span class="highlight">collections (maps, sets and weak maps)</span>, <span class="highlight">promises</span>, number and math enhancements, reflection, and <span class="highlight">proxies</span> (metaprogramming for virtual objects and wrappers). As the first “ECMAScript Harmony” specification, it is also known as “ES6 Harmony”.</p></td>
+                        </tr>
+                        <tr>
+                          <td>7</td>
+                          <td><p>Work in progress</p></td>
+                          <td><p>The Seventh Edition is in a very early stage of development, but is intended to continue the themes of language reform, code isolation, control of effects and library/tool enabling from ES6. New features proposed include concurrency and atomics, zero-copy binary data transfer, more number and math enhancements, syntactic integration with promises, observable streams, SIMD types, better metaprogramming with classes, class and instance properties, operator overloading, value types (first-class primitive-like objects), records and tuples, and traits.</p></td>
+                        </tr>
+                      </tbody></table>
+                  </section>
+                </section>
+
+                <section>
+                  <h2>ECMA-262 Proposals</h2>
+                  <p><a href="https://github.com/tc39/ecma262#ecmascript">https://github.com/tc39/ecma262#ecmascript</a></p>
+
+                  <h2>ECMAScript Compatability table</h2>
+                  <p><a href="https://kangax.github.io/compat-table/es6/">https://kangax.github.io/compat-table/es6/</a></p>
+                </section>
+
+                <section data-state="alert">
+                    <h2>ECMAScript-6 / ES-2015</h2>
+                    <p>
+                        Get ready for the future. <strong>Now</strong>.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>ES-2015 New Features</h2>
+                    <div class='span6'>
+                      <ul>
+                        <li>var / let / const</li>
+                        <li>Template Literals</li>
+                        <li>Default Parametsr</li>
+                        <li>REST Parameters</li>
+                        <li>SPREAD</li>
+                        <li>Object Literals</li>
+                      </ul>
+                    </div>
+                    <div class='span6'>
+                      <ul>
+                        <li>Arrow Functions (=>)</li>
+                        <li>Classes</li>
+                        <li>Modules</li>
+                        <li>Set / Map / WeakMap</li>
+                        <li>Iterators</li>
+                        <li>Generators</li>
+                        <li>Proxy</li>
+                        <li>Symbols</li>
+                      </ul>
+                    </div>
+                </section>
+
+                <section>
+                  <section>
+                    <h2>var / let / const</h2>
+                    <p>
+                      Problem: Javascript supports only 2 types of scoping:<br/>
+                          Global Scope <br/>
+                          Function Scope
+                    </p>
+                  </section>
+                  <section>
+                    <p class="question">What's the output?</p>
+                    <pre>
+                      <code data-trim>
+var x = 42;
+if (true) {
+  var x = 1337;
+}
+console.log(x);
+                      </code>
+                    </pre>
+                    <h2 class="response fragment">1337</h2>
+                  </section>
+
+
+                  <section>
+                    <p class="question">What's the output?</p>
+                    <pre>
+                      <code data-trim>
+
+console.log("Before function: ", message);
+function initialize() {
+  console.log("Before variable declaration: ", message);
+  var message = "Hello Moneygram";
+  console.log("After variable declaration: ", message);
+}
+initialize();
+console.log("After function: ", message);
+
+                      </code>
+                    </pre>
+                    <h2 class="response fragment">Uncaught ReferenceError: message is not defined</h2>
+                  </section>
+
+
+                  <section>
+                    <p class="question">What's the output?</p>
+                    <pre>
+                      <code data-trim>
+
+function initialize() {
+  console.log("Before variable declaration: ", message);
+  var message = "Hello Moneygram";
+  console.log("After variable declaration: ", message);
+}
+initialize();
+
+                      </code>
+                    </pre>
+                    <h3 class="response fragment">Before variable declaration:  undefined</h3>
+                    <h3 class="response fragment">After variable declaration:  Hello Moneygram</h3>
+                  </section>
+
+                  <section>
+                    <h2>let</h2>
+                    <p>
+                      <ul>
+                        <li><code style="font-size: 18px; margin-top: 20px;">let</code> and <code style="font-size: 18px; margin-top: 20px;">const</code> are alternatives to var when declaring variables</li>
+                        <li>let is block-scoped instead of lexically scoped to a function</li>
+                        <li>let is hoisted to the top of the block, while var declarations are hoisted to top of the function</li>
+                      </ul>
+                    </p>
+                  </section>
+
+                  <section>
+                    <p class="question">What's the output?</p>
+                    <pre>
+                      <code data-trim>
+let x = 42;
+if (true) {
+  let x = 1337;
+}
+console.log(x);
+                      </code>
+                    </pre>
+                    <h2 class="response fragment">42</h2>
+                  </section>
+
+                  <section>
+                    <h2>const</h2>
+                    <p>
+                      <ul>
+                        <li><code class="md-code md-code-inline">const</code> is also block-scoped, </li>
+                        <li><code class="md-code md-code-inline">const</code> variables must be declared using an initializer, <code class="md-code md-code-inline">const foo = 'bar'</code></li>
+                        <li>Assigning to <code class="md-code md-code-inline">const</code> after initialization fails silently (or <strong>loudly</strong> <em>– with an exception –</em> under strict mode)</li>
+                        <li><code class="md-code md-code-inline">const</code> variables don’t make the assigned value immutable</li>
+                      </ul>
+                    </p>
+                  </section>
+                </section>
+
+                <section>
+                    <h2>ES-2015 New Features</h2>
+                    <div class='span6'>
+                      <ul>
+                        <li><strike>var / let / const</strike></li>
+                        <li>Template Literals</li>
+                        <li>Default Parametsr</li>
+                        <li>REST Parameters</li>
+                        <li>SPREAD</li>
+                        <li>Object Literals</li>
+                      </ul>
+                    </div>
+                    <div class='span6'>
+                      <ul>
+                        <li>Arrow Functions (=>)</li>
+                        <li>Classes</li>
+                        <li>Modules</li>
+                        <li>Set / Map / WeakMap</li>
+                        <li>Iterators</li>
+                        <li>Generators</li>
+                        <li>Proxy</li>
+                        <li>Symbols</li>
+                      </ul>
+                    </div>
+                </section>
+
+                <section>
+                  <section>
+                    <h2>Template Literals</h2>
+                    <p>Template literals are a new feature in ES6 to make working with strings and string templates easier. You wrap your text in <code class="md-code md-code-inline">`backticks`</code> and you’ll get the features described below.</p>
+
+                    <ul>
+                      <li>You can interpolate variables in them</li>
+                      <li>You can actually interpolate using <em>any kind of expression</em>, not just variables</li>
+                      <li>They can be <strong>multi-line</strong>. <em>Finally!</em></li>
+                      <li>You can construct <em>raw templates</em> that don’t interpret backslashes</li>
+                    </ul>
+                  </section>
+                  <section>
+                    <pre><code data-trim>
+
+var username = 'SKUSUNAM';
+var message = 'User ' + username + ' Logged-in Succesfully !!!!!';
+
+var anotherMessage = 'Template literals are a new feature in ES6 to'
+                      + ' make working with strings and string templates'
+                      + ' easier. You wrap your text'
+                      + ' in backticks and you’ll get'
+                      + ' the features described below.';
+
+                    </code></pre>
+                  </section>
+                  <section>
+                    <p>
+                      <pre><code data-trim>`I'm just a string`</code></pre>
+                      <hr/>
+                      <pre><code data-trim>
+                        var text = `I'm "amazed" that we have so many quotation marks to choose from!`
+                      </code></pre>
+                      <hr/>
+                      <pre><code data-trim>
+var host = 'ponyfoo.com';
+var text = `this blog lives at ${host}`
+console.log(text)
+// &lt;- 'this blog lives at ponyfoo.com'
+</code>
+</pre>
+<hr/>
+
+<pre><code data-trim>
+  var html = `<article>
+  <header>
+    <h1>${title}</h1>
+  </header>
+  </article>`
+</code></pre>
+                    </p>
+                  </section>
+                </section>
+
+                <section>
+                    <h2>ES-2015 New Features</h2>
+                    <div class='span6'>
+                      <ul>
+                        <li><strike>var / let / const</strike></li>
+                        <li><strike>Template Literals</strike></li>
+                        <li>Default Parametsr</li>
+                        <li>REST Parameters</li>
+                        <li>SPREAD</li>
+                        <li>Object Literals</li>
+                      </ul>
+                    </div>
+                    <div class='span6'>
+                      <ul>
+                        <li>Arrow Functions (=>)</li>
+                        <li>Classes</li>
+                        <li>Modules</li>
+                        <li>Set / Map / WeakMap</li>
+                        <li>Iterators</li>
+                        <li>Generators</li>
+                        <li>Proxy</li>
+                        <li>Symbols</li>
+                      </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Default Parameters</h2>
+                        <p>
+                            Define your parameter defaults in the function signature itself.
+                        </p>
+                        <p>
+                            <h4>The Old way</h4>
+                            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+
+function myFunction(a, b, c) {
+  a = a || "default";
+  b = b || "bye";
+  c = c || "c";
+}
+                        </code></pre>
+                        <h4>The New Way</h4>
+                            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+
+function myFunction(a="default", b="bye", c="c") {
+
+}
+                        </code></pre>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Default Parameters</h2>
+                        <p>
+                            Or some expressions as well.
+                            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+function myFunc(a = 0, b = a*a, c = b*a) {
+    return [a, b, c];
+}
+
+// myFunc(5); evaluates to [5, 25, 125]
+                            </code></pre>
+                        </p>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>ES-2015 New Features</h2>
+                    <div class='span6'>
+                      <ul>
+                        <li><strike>var / let / const</strike></li>
+                        <li><strike>Template Literals</strike></li>
+                        <li><strike>Default Parametsr</strike></li>
+                        <li>REST Parameters</li>
+                        <li>SPREAD</li>
+                        <li>Object Literals</li>
+                      </ul>
+                    </div>
+                    <div class='span6'>
+                      <ul>
+                        <li>Arrow Functions (=>)</li>
+                        <li>Classes</li>
+                        <li>Modules</li>
+                        <li>Set / Map / WeakMap</li>
+                        <li>Iterators</li>
+                        <li>Generators</li>
+                        <li>Proxy</li>
+                        <li>Symbols</li>
+                      </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Rest Parameters</h2>
+                        <p>
+                            Handle indefinite number of parameters?
+
+                            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+function myFunc(a, b, ...r) {
+    console.log(Array.isArray(r));
+    return r.concat([a, b]);
+}
+myFunc(1,2,3,4,5);
+                            </code></pre>
+                        </p>
+                        <h2 class="response fragment">true</h2>
+                        <h2 class="response fragment">[3, 4, 5, 1, 2]</h2>
+                    </section>
+                    <section>
+                        <h2>Rest Parameters</h2>
+                        <p>
+                            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+> myFunc(1, 2);
+true
+[1, 2]
+                            </code></pre>
+                        </p>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>ES-2015 New Features</h2>
+                    <div class='span6'>
+                      <ul>
+                        <li><strike>var / let / const</strike></li>
+                        <li><strike>Template Literals</strike></li>
+                        <li><strike>Default Parametsr</strike></li>
+                        <li><strike>REST Parameters</strike></li>
+                        <li>SPREAD</li>
+                        <li>Object Literals</li>
+                      </ul>
+                    </div>
+                    <div class='span6'>
+                      <ul>
+                        <li>Arrow Functions (=>)</li>
+                        <li>Classes</li>
+                        <li>Modules</li>
+                        <li>Set / Map / WeakMap</li>
+                        <li>Iterators</li>
+                        <li>Generators</li>
+                        <li>Proxy</li>
+                        <li>Symbols</li>
+                      </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Spread</h2>
+                        <p>
+                            The dual of the rest parameters.
+                            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+> var a = [3, 4, 5];
+> [1, 2, ...a];
+[1, 2, 3, 4, 5]
+                            </code></pre>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Spread</h2>
+                        <p>
+                            You can even use it in expressions as well!
+                            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+function myFunction(x, y, z) { }
+var args = [0, 1, 2];
+myFunction(...args);
+                            </code></pre>
+                            We just broke up an array into a individial parameter list.
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Spread</h2>
+                        <p>
+                            Any argument in the argument list can use the spread syntax and it can be used multiple times.
+                            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+function myFunction(v, w, x, y, z) { }
+var args = [0, 1];
+myFunction(-1, ...args, 2, ...[3]);
+                            </code></pre>
+                        </p>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>ES-2015 New Features</h2>
+                    <div class='span6'>
+                      <ul>
+                        <li><strike>var / let / const</strike></li>
+                        <li><strike>Template Literals</strike></li>
+                        <li><strike>Default Parametsr</strike></li>
+                        <li><strike>REST Parameters</strike></li>
+                        <li><strike>SPREAD</strike></li>
+                        <li>Object Literals</li>
+                      </ul>
+                    </div>
+                    <div class='span6'>
+                      <ul>
+                        <li>Arrow Functions (=>)</li>
+                        <li>Classes</li>
+                        <li>Modules</li>
+                        <li>Set / Map / WeakMap</li>
+                        <li>Iterators</li>
+                        <li>Generators</li>
+                        <li>Proxy</li>
+                        <li>Symbols</li>
+                      </ul>
+                    </div>
+                </section>
+
+                <section>
+                  <section>
+                    <h2>Object Literals</h2>
+                    <p>
+                      <ul>
+                        <li>Instead of <code class="md-code md-code-inline">{ foo: foo }</code>, you can just do <code class="md-code md-code-inline">{ foo }</code> – known as a <em>property value shorthand</em></li>
+                        <li>Computed property names, <code class="md-code md-code-inline">{ <mark class="md-mark md-code-mark">[prefix + 'Foo']</mark>: 'bar' }</code>, where <code class="md-code md-code-inline">prefix: 'moz'</code>, yields <code class="md-code md-code-inline">{ mozFoo: 'bar' }</code></li>
+                        <li>You can’t combine computed property names and property value shorthands, <code class="md-code md-code-inline">{ [foo] }</code> is invalid</li>
+                      </ul>
+                    </p>
+                  </section>
+                  <section>
+                    <h2>Property Value Shorthands</h2>
+                    <p>
+                      Whenever you find yourself assigning a property value that matches a property name, you can omit the property value, it’s implicit in ES6.
+                    </p>
+                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+var foo = 'bar'
+var baz = { foo }
+console.log(baz.foo)
+// <- 'bar'
+                    </code></pre>
+                  </section>
+
+                  <section>
+                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+var ms = {}
+
+function getItem (key) {
+  return key in ms ? ms[key] : null
+}
+
+function setItem (key, value) {
+  ms[key] = value
+}
+// ES5
+module.exports = {
+  getItem: getItem,
+  setItem: setItem
+}
+//ES-6 / ES-2015
+module.exports = { getItem, setItem}
+
+                    </code></pre>
+                  </section>
+
+                  <!--section>
+                    <h2>Computed Property Names</h2>
+                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+var foo = 'bar'
+var baz = {}
+baz[foo] = 'ponyfoo'
+console.log(baz)
+// <- { bar: 'ponyfoo' }
+                    </code></pre>
+                  </section-->
+                </section>
+
+                <section>
+                    <h2>ES-2015 New Features</h2>
+                    <div class='span6'>
+                      <ul>
+                        <li><strike>var / let / const</strike></li>
+                        <li><strike>Template Literals</strike></li>
+                        <li><strike>Default Parametsr</strike></li>
+                        <li><strike>REST Parameters</strike></li>
+                        <li><strike>SPREAD</strike></li>
+                        <li><strike>Object Literals</strike></li>
+                      </ul>
+                    </div>
+                    <div class='span6'>
+                      <ul>
+                        <li>Arrow Functions (=>)</li>
+                        <li>Classes</li>
+                        <li>Modules</li>
+                        <li>Set / Map / WeakMap</li>
+                        <li>Iterators</li>
+                        <li>Generators</li>
+                        <li>Proxy</li>
+                        <li>Symbols</li>
+                      </ul>
+                    </div>
+                </section>
+
+                <section>
+                  <section>
+                    <h2>Arrow Functions</h2>
+                    <p>
+                      <ul>
+                        <li>Terse way to declare a function like <code class="md-code md-code-inline">param =&gt; returnValue</code></li>
+                        <li>Useful when doing functional stuff like <code class="md-code md-code-inline">[1, 2].map(x =&gt; x * 2)</code></li>
+                        <li>Several flavors are available, might take you some getting used to
+                        </li>
+                      </ul>
+                    </p>
+                  </section>
+                  <section>
+                    <h2>Arrow Functions</h2>
+                    <p>
+
+                          <ul>
+                            <li><p class="small-size"><code class="md-code md-code-inline">p1 =&gt; expr</code> is okay for a single parameter</p></li>
+                            <li><pre></pre><code class="md-code md-code-inline">p1 =&gt; expr</code> has an implicit <code class="md-code md-code-inline">return</code> statement for the provided <code class="md-code md-code-inline">expr</code> expression</li>
+                            <li>To return an object implicitly, wrap it in parenthesis <code class="md-code md-code-inline">() =&gt; ({ foo: 'bar' })</code> or you’ll get <strong>an error</strong></li>
+                            <li>Parenthesis are demanded when you have zero, two, or more parameters, <code class="md-code md-code-inline">() =&gt; expr</code> or <code class="md-code md-code-inline">(p1, p2) =&gt; expr</code></li>
+                            <li>Brackets in the right-hand side represent a code block that can have multiple statements, <code class="md-code md-code-inline">() =&gt; {}</code></li>
+                            <li>When using a code block, there’s no implicit <code class="md-code md-code-inline">return</code>, you’ll have to provide it – <code class="md-code md-code-inline">() =&gt; { return 'foo' }</code></li>
+                          </ul>
+                    </p>
+                  </section>
+                  <section>
+                    <h2>Using Arrow Functions</h2>
+                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+[1, 2, 3].map(num => num * 2)
+// <- [2, 4, 6]
+                    </code></pre>
+                    <p>The ES5 equivalent would be as below.</p>
+                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+[1, 2, 3].map(function (num) { return num * 2 })
+// <- [2, 4, 6]
+                    </code></pre>
+<p>If we need to declare more arguments (or no arguments), we’ll have to use parenthesis.</p>
+                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+[1, 2, 3, 4].map((num, index) => num * 2 + index)
+// <- [2, 5, 8, 11]
+                    </code></pre>
+                  </section>
+                  <section>
+<p>You might want to have some other statements and not just an expression to return. </p>
+                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+[1, 2, 3, 4].map((num, index) => {
+  var multiplier = 2 + index
+  return num * multiplier
+})
+// <- [2, 6, 12, 20]
+                    </code></pre>
+                    <p>A cool aspect of arrow functions in ES6 is that they’re bound to their lexical scope. That means that you can say goodbye to var self = this and similar hacks – such as using .bind(this) – to preserve the context from within deeply nested methods.</p>
+
+                  </section>
+                </section>
+
+                <section>
+                    <h2>ES-2015 New Features</h2>
+                    <div class='span6'>
+                      <ul>
+                        <li><strike>var / let / const</strike></li>
+                        <li><strike>Template Literals</strike></li>
+                        <li><strike>Default Parametsr</strike></li>
+                        <li><strike>REST Parameters</strike></li>
+                        <li><strike>SPREAD</strike></li>
+                        <li><strike>Object Literals</strike></li>
+                      </ul>
+                    </div>
+                    <div class='span6'>
+                      <ul>
+                        <li><strike>Arrow Functions (=>)</strike></li>
+                        <li>Classes</li>
+                        <li>Modules</li>
+                        <li>Set / Map / WeakMap</li>
+                        <li>Iterators</li>
+                        <li>Generators</li>
+                        <li>Proxy</li>
+                        <li>Symbols</li>
+                      </ul>
+                    </div>
+                </section>
+
+                <section>
+                  <section>
+                    <h2>Classes</h2>
+                    <p>
+                      <ul>
+                        <li>Not <em>“traditional”</em> classes, syntax sugar on top of prototypal inheritance</li>
+                        <li>Syntax similar to declaring objects, <code class="md-code md-code-inline">class Foo {}</code></li>
+                        <li>Static methods <em>– <code class="md-code md-code-inline">Foo.isPonyFoo()</code> –</em> need a <code class="md-code md-code-inline">static</code> keyword prefix, <code class="md-code md-code-inline">class Foo { <mark class="md-mark md-code-mark">static</mark> isPonyFoo () {} }</code></li>
+                        <li>Constructor method <code class="md-code md-code-inline">class Foo { constructor () { /* initialize instance */ } }</code></li>
+                        <li>Prototypal inheritance with a simple syntax <code class="md-code md-code-inline">class PonyFoo <mark class="md-mark md-code-mark">extends</mark> Foo {}</code></li>
+                      </ul>
+                    </p>
+                  </section>
+                  <section>
+                    <h2>Using Classes</h2>
+                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+function Car () {
+  this.fuel = 0;
+  this.distance = 0;
+}
+
+Car.prototype.move = function () {
+  if (this.fuel < 1) {
+    throw new RangeError('Fuel tank is depleted')
+  }
+  this.fuel--
+  this.distance += 2
+}
+
+Car.prototype.addFuel = function () {
+  if (this.fuel >= 60) {
+    throw new RangeError('Fuel tank is full')
+  }
+  this.fuel++
+}
+                    </code></pre>
+                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+var car = new Car()
+car.addFuel()
+car.move()
+car.move()
+// <- RangeError: 'Fuel tank is depleted'
+                    </code></pre>
+                  </section>
+                  <section>
+                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+class Car {
+  constructor () {
+    this.fuel = 0
+    this.distance = 0
+  }
+  move () {
+    if (this.fuel < 1) {
+      throw new RangeError('Fuel tank is depleted')
+    }
+    this.fuel--
+    this.distance += 2
+  }
+  addFuel () {
+    if (this.fuel >= 60) {
+      throw new RangeError('Fuel tank is full')
+    }
+    this.fuel++
+  }
+}
+                    </code></pre>
+                  </section>
+                  <section>
+                    <p>Many times “classes” have static methods. Think of your friend the Array for example. Arrays have instance methods like .filter, .reduce, and .map. The Array “class” itself has static methods as well, like Array.isArray. In ES5 code, it’s pretty easy to add these kind of methods to our Car “class”.</p>
+                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+function Car () {
+  this.topSpeed = Math.random()
+}
+Car.isFaster = function (left, right) {
+  return left.topSpeed > right.topSpeed
+}
+                    </code></pre>
+                    <p>In ES6 class notation, we can use precede our method with static</p>
+                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+class Car {
+  constructor () {
+    this.topSpeed = Math.random()
+  }
+  static isFaster (left, right) {
+    return left.topSpeed > right.topSpeed
+  }
+}
+                    </code></pre>
+                  </section>
+                <section>
+                  <p>One sweet aspect of ES6 class sugar is that you also get an extends keyword that enables you to easily “inherit” from other “classes”.</p>
+                  <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+class Car {
+  constructor (speed) {
+    this.speed = speed
+  }
+  move() {
+    console.log("super")
+  }
+}
+class Tesla extends Car {
+  constructor (speed) {
+    super(speed * 2)
+  }
+  move() {
+    super.move()
+    console.log("super")
+  }
+}
+                </code></pre>
+                </section>
+              </section>
+
+                <section>
+                    <h2>ES-2015 New Features</h2>
+                    <div class='span6'>
+                      <ul>
+                        <li><strike>var / let / const</strike></li>
+                        <li><strike>Template Literals</strike></li>
+                        <li><strike>Default Parametsr</strike></li>
+                        <li><strike>REST Parameters</strike></li>
+                        <li><strike>SPREAD</strike></li>
+                        <li><strike>Object Literals</strike></li>
+                      </ul>
+                    </div>
+                    <div class='span6'>
+                      <ul>
+                        <li><strike>Arrow Functions (=>)</strike></li>
+                        <li><strike>Classes</strike></li>
+                        <li>Modules</li>
+                        <li>Set / Map / WeakMap</li>
+                        <li>Iterators</li>
+                        <li>Generators</li>
+                        <li>Proxy</li>
+                        <li>Symbols</li>
+                      </ul>
+                    </div>
+                </section>
+
+                <section>
+                  <section>
+                    <h2>Modules</h2>
+                    <p>
+                      Before ES6 we really went out of our ways to obtain modules in JavaScript.
+
+                      <p>Popular alternatives were:</p>
+                      <p>AMD (RequireJS)</p>
+                      <p>CommonJS</p>
+                      <p>Angular DI</p>
+                    </p>
+                    <p>ES6 modules have been heavily influenced by CommonJS</p>
+                  </section>
+                  <section>
+                    <ul>
+                      <li>In the ES6 module system, strict mode is turned on by default.</li>
+                      <li>ES6 modules are files that export an API – just like CommonJS modules.</li>
+                      <li>There are 2 main things in Modules
+                        <ul>
+                          <li>exports</li>
+                          <li>imports</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </section>
+                  <section>
+                    <h3>Exports</h3>
+                    <ul>
+                      <li><a href="/articles/es6-modules-in-depth#exporting-a-default-binding"><code class="md-code md-code-inline">export default value</code></a> exports a default binding</li>
+                      <li><a href="/articles/es6-modules-in-depth#named-exports"><code class="md-code md-code-inline">export var foo = 'bar'</code></a> exports a named binding</li>
+                      <li><code class="md-code md-code-inline">export { foo, bar }</code> exports <a href="/articles/es6-modules-in-depth#exporting-lists">a list of named exports</a></li>
+                      <li><code class="md-code md-code-inline">export { foo <mark class="md-mark md-code-mark">as ponyfoo</mark> }</code> aliases the export to be referenced as <code class="md-code md-code-inline">ponyfoo</code> instead</li>
+                      <li><code class="md-code md-code-inline">export { foo <mark class="md-mark md-code-mark">as default</mark> }</code> marks the named export as the default export</li>
+                      <li>As <a href="/articles/es6-modules-in-depth#best-practices-and-export">a best practice</a>, <code class="md-code md-code-inline">export default api</code> at the end of all your modules, where <code class="md-code md-code-inline">api</code> is an object, avoids confusion</li>
+                    </ul>
+                  </section>
+                  <section>
+                    <h3>Imports</h3>
+                    <ul>
+                      <li><a href="/articles/es6-modules-in-depth#import"><code class="md-code md-code-inline">import 'foo'</code></a> loads the <code class="md-code md-code-inline">foo</code> module into the current module</li>
+                      <li><a href="/articles/es6-modules-in-depth#importing-default-exports"><code class="md-code md-code-inline">import <mark class="md-mark md-code-mark">foo from</mark> 'ponyfoo'</code></a> assigns the default export of <code class="md-code md-code-inline">ponyfoo</code> to a local <code class="md-code md-code-inline">foo</code> variable</li>
+                      <li><a href="/articles/es6-modules-in-depth#importing-named-exports"><code class="md-code md-code-inline">import {foo, bar} from 'baz'</code></a> imports named exports <code class="md-code md-code-inline">foo</code> and <code class="md-code md-code-inline">bar</code> from the <code class="md-code md-code-inline">baz</code> module</li>
+                      <li><code class="md-code md-code-inline">import {foo <mark class="md-mark md-code-mark">as bar</mark>} from 'baz'</code> imports named export <code class="md-code md-code-inline">foo</code> but aliased as a <code class="md-code md-code-inline">bar</code> variable</li>
+                      <li><code class="md-code md-code-inline">import {default} from 'foo'</code> also imports the default export</li>
+                      <li><code class="md-code md-code-inline">import {default <mark class="md-mark md-code-mark">as bar</mark>} from 'foo'</code> imports the default export aliased as <code class="md-code md-code-inline">bar</code></li>
+                    </ul>
+                  </section>
+                  <section>
+                    <ul>
+                      <li><a href="/articles/es6-modules-in-depth#import-all-the-things"><code class="md-code md-code-inline">import * as foo from 'foo'</code></a> imports the namespace object<ul><li>Contains all named exports in <code class="md-code md-code-inline">foo[name]</code></li><li>Contains the default export in <code class="md-code md-code-inline">foo.default</code>, if a default export was declared in the module</li></ul></li>
+                    </ul>
+                  </section>
+                  <section>
+                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+//------ lib.js ------
+    export const sqrt = Math.sqrt;
+    export function square(x) {
+        return x * x;
+    }
+    export function diag(x, y) {
+        return sqrt(square(x) + square(y));
+    }
+
+//------ main.js ------
+    import { square, diag } from 'lib';
+    console.log(square(11)); // 121
+    console.log(diag(4, 3)); // 5
+                    </code></pre>
+                  </section>
+                  <section>
+                    <p>If you want to, you can also import the whole module and refer to its named exports via property notation:</p>
+                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+//------ main.js ------
+    import * as lib from 'lib';
+    console.log(lib.square(11)); // 121
+    console.log(lib.diag(4, 3)); // 5
+                    </code></pre>
+                  </section>
+                </section>
+
+                <section>
+                    <h2>ES-2015 New Features</h2>
+                    <div class='span6'>
+                      <ul>
+                        <li><strike>var / let / const</strike></li>
+                        <li><strike>Template Literals</strike></li>
+                        <li><strike>Default Parametsr</strike></li>
+                        <li><strike>REST Parameters</strike></li>
+                        <li><strike>SPREAD</strike></li>
+                        <li><strike>Object Literals</strike></li>
+                      </ul>
+                    </div>
+                    <div class='span6'>
+                      <ul>
+                        <li><strike>Arrow Functions (=>)</strike></li>
+                        <li><strike>Classes</strike></li>
+                        <li><strike>Modules</strike></li>
+                        <li>Set / Map / WeakMap</li>
+                        <li>Iterators</li>
+                        <li>Generators</li>
+                        <li>Proxy</li>
+                        <li>Symbols</li>
+                      </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Sets</h2>
+                        <p>
+                            The Set object lets you store unique values of any type, whether primitive values or object references.
+                            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+> var s = new Set([1, true, "three"]);
+> s.has(true);
+true
+> s.has("true");
+false
+> s.size();
+3
+                            </code></pre>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Sets</h2>
+                        <p>
+                            Additional and deletion of elements is also easy.
+                            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+> s.delete("three");
+true
+> s.has("three");
+false
+> s.add("two");
+> s.size()
+3
+                            </code></pre>
+                        </p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Maps</h2>
+                        <p>
+                            Key/Value pairs the JS way. Your keys aren't converted to strings implicitly.
+                            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+var data = {val: "age"};
+var m = new Map([[name, "sankha"], [data, 20]]);
+
+> m.get(name);
+"sankha"
+> m.get(data);
+20
+                            </code></pre>
+                        </p>
+                    </section>
+                </section>
+                <!--section>
+                    <section>
+                        <h2>WeakMap</h2>
+                        <p>
+                            Cycles between keys and values can tie up space in a Map.<br>
+                            Weakmap comes to rescue!
+                            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+> var objkey1 = {toString: function(){return "objkey1"}};
+> var objkey2 = {toString: function(){return "objkey2"}};
+> var wm = new WeakMap();
+> wm.set(objkey1, objkey2);
+> wm.set(objkey2, objkey1);
+> wm.get(objkey1);
+({toString:(function (){return "objkey2"})})
+                            </code></pre>
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Iterators</h2>
+                        <p>
+                            <code>for-of</code> loops.
+                            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+> for (var v of [1, 2, 3]) {
+  console.log(v);
+}
+1
+2
+3
+                            </code></pre>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Iterators</h2>
+                        <p>
+                            Iterables from Sets and Maps.
+                            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+> for (var e of set) {
+  console.log(e);
+}
+
+> for (var [k, v] of map) {
+  console.log(k, v);
+}
+                            </code></pre>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Iterators</h2>
+                        <p>
+                            Iterate over keys, values and items.
+                            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+> var s = new Set([1, 2, 3]);
+> var it = set.keys();
+> it = set.values();
+> it = set.entries();
+> it.next();
+[1, 1]
+> it.next();
+[2, 2]
+                            </code></pre>
+                            Applicable for any Iterables, Array, Sets, Maps.
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Generators</h2>
+                        <p>
+                            Better way to create iterators. Each call to <code>next()</code> executes the function body till the next <code>yield</code>.
+                            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+function myGenerator() {
+  for (var i = 0; i < 3; i++)
+    yield i * 2;
+}
+
+var g = myGenerator();
+g.next(); // returns 0
+g.next(); // returns 2
+g.next(); // returns 4
+g.next(); // throws StopIteration
+                            </code></pre>
+                        </p>
+                    </section>
+                </section-->
+                <!--section>
+                    <section>
+                        <h2>Proxy</h2>
+                        <p>
+                            To enable ES programmers to represent virtualized objects (proxies).
+                            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+> var MethodSink = Proxy({}, {
+  has: function(target, name) { return true; },
+  get: function(target, name, receiver) {
+    if (name in Object.prototype) {
+      return Object.prototype[name];
+    }
+    return function(...args) {
+      return receiver.__noSuchMethod__(name, args);
+    }
+  }
+});
+                            </code></pre>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Proxy</h2>
+                        <p>
+                            Lets create a default <code>__noSuchMethod__</code>.
+                            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+> Object.defineProperty(
+  Object.prototype,
+  '__noSuchMethod__',
+  {
+    configurable: true,
+    writable: true,
+    value: function(name, args) {
+      throw new TypeError(name + " is not a function");
+    }
+  }
+);
+                            </code></pre>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Proxy</h2>
+                        <p>
+                            Lets add MethodSink to the end of the prototype chain.
+                            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+> var obj = {
+      foo: 1 ,
+      __proto__: MethodSink,
+      __noSuchMethod__: function(name, args) {
+        return name;
+      }
+    }
+> obj.foo
+1
+> obj.bar()
+"bar"
+> obj.toString
+function toString() {
+    [native code]
+}
+                            </code></pre>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Proxy</h2>
+                        <p>
+                            We can now proxy <code>__noSuchMethod__</code>.
+                            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+> obj.bar
+(function (...args) {
+      return receiver.__noSuchMethod__(name, args);
+    })
+> var foo = obj.bar
+js> foo()
+"bar"
+                            </code></pre>
+                        </p>
+                    </section>
+                </section-->
+                <!--section>
+                    <section>
+                        <h2>Arrow Functions</h2>
+                        <p>
+                            Shorter function expressions.
+                            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+> var square = x => x * x;
+> square(5)
+25
+                            </code></pre>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Arrow Functions</h2>
+                        <p>
+                            Take a look at this peice of code.
+                            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+function Person(){
+  this.age = 0;
+
+  setInterval(function growUp(){
+    this.age++;
+  }, 1000);
+}
+
+var p = new Person();
+                            </code></pre>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Arrow Functions</h2>
+                        <p>
+                            Arrow functions lexically bind the <code>this</code> value.
+                            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+function Person(){
+  this.age = 0;
+
+  setInterval(() => {
+    this.age++;
+  }, 1000);
+}
+
+var p = new Person();
+                            </code></pre>
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <h2>Modules</h2>
+                    <p>
+                        They are eh, modules?
+                        <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+module FastMath {
+    export function sin() { /*...*/ }
+    export function cos() { /*...*/ }
+}
+
+import {sin, cos} from FastMath;
+                            </code></pre>
+                    </p>
+                </section-->
+                <section>
+                    <h2>In-built methods</h2>
+                    <p>
+                        <ul>
+                            <li class="fragment">String startsWith, endsWith, contains, repeat</li>
+                            <li class="fragment">Number isNaN, isFinite, toInteger, isInteger</li>
+                            <li class="fragment">Number of Math functions</li>
+                        </ul>
+                    </p>
+                </section>
+                <!--section>
+                    <h2>Lots More</h2>
+                    <p>
+                        There are many more things being planned.<br><br>
+                        <span class="fragment">Classes, </span>
+                        <span class="fragment">Modules, </span>
+                        <span class="fragment">etc.</span>
+                    </p>
+                </section-->
+                <section>
+                    <h2>Read the spec</h2>
+                    <p>
+                        The spec is publicly available online at <a href="http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts">ECMAScript Wiki</a>.
+                    </p>
+                </section>
+                <section>
+                    <h2>Experiment</h2>
+                    <p>
+                        Partially implemented in SpiderMonkey and V8.<br>
+                        Try on Firefox Nightly and Google Chrome and report bugs.
+                    </p>
+                    <p>
+                        <br><br>
+                        <small><strong>Note:</strong> Turn on Experimental JavaScript in Google Chrome via <code>chrome://flags</code></small>
+                    </p>
+                </section>
+                <section>
+                    <h1>Thank you!</h1>
+                    <h3>Questions?</h3>
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
